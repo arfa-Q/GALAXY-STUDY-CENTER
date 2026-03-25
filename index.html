@@ -1,0 +1,52 @@
+# --- GALAXY STUDY CENTER: CLASS IX EDITION ---
+# Created for: A Future App Developer
+# Features: Math, Physics, and Freemium Logic
+
+def start_app():
+    # This variable tracks if the user has paid for Premium
+    is_premium = False 
+    
+    while True:
+        print("\n" + "="*30)
+        print("  🌌 GALAXY STUDY CENTER 🌌  ")
+        print("="*30)
+        print("1. [FREE] Math: Square a Number")
+        print("2. [FREE] Physics: Force Calculator (F=ma)")
+        print("3. [PREMIUM] Exam Secret Tips ✨")
+        print("4. Upgrade to Premium (Remove Ads)")
+        print("5. Exit App")
+        
+        # This simulates a "Banner Ad" at the bottom
+        if not is_premium:
+            print("\n[ AD: 🎒 Get 20% off New School Bags! ]")
+        
+        choice = input("\nSelect an option (1-5): ")
+
+        if choice == "1":
+            num = float(input("Enter a number to square: "))
+            print(f"Result: {num} squared is {num**2}")
+
+        elif choice == "2":
+            m = float(input("Enter Mass (kg): "))
+            a = float(input("Enter Acceleration (m/s²): "))
+            print(f"Result: The Force is {m * a} Newtons.")
+
+        elif choice == "3":
+            if is_premium:
+                print("\n🌟 PREMIUM SECRET: In Physics numericals, always check if units are in SI (kg, meters, seconds) before calculating!")
+            else:
+                print("\n❌ LOCKED: Please Upgrade to Premium to see Exam Secrets.")
+
+        elif choice == "4":
+            print("\nProcessing EasyPaisa/JazzCash simulation...")
+            is_premium = True
+            print("✅ SUCCESS! Ads removed. Premium features unlocked.")
+
+        elif choice == "5":
+            print("Goodbye! Happy Studying!")
+            break
+        else:
+            print("Invalid choice, try again.")
+
+# This line tells the computer to start the app
+start_app()
